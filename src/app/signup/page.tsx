@@ -46,7 +46,7 @@ export default function SignIn(){
          {/* Get Started Button */} 
             
             <button
-            type= "sumbit"
+            type= "submit"
             className='font-heading w-full h-11.5 bg-brand-pink text-brand-dark font-black
             rounded-xl border-4 border-brand-dark 
             transition duration-200 cursor-pointer active:scale-80 transition-all'>
