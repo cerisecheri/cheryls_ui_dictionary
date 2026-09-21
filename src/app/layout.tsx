@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Darumadrop_One, Judson } from "next/font/google";
+import Sidebar from "@/components/sidebar";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const darumadropOne = Darumadrop_One({
+  variable: "--heading-font-raw",
   subsets: ["latin"],
+  weight: "400",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const judson = Judson({
+  variable: "--body-font-raw",
   subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -25,9 +28,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${darumadropOne.variable} ${judson.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="bg-brand-pink min-h-screen flex relative overflow-x-hidden">
+      <Sidebar />
+        <main
+        className="ml-24 flex-1 min-w-0 p-8 min-h-screen">
+        {children}
+        </main>
+        </body>
     </html>
   );
 }
